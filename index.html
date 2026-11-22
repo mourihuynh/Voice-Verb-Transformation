@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voice & Verb Transformation – Câu bị động và thể sai khiến</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F4FF;--sf:#fff;--ink:#0A0F29;--mu:#363E6B;--ln:#CBD1F0;--ye:#FFD23F;--sh:0 18px 44px -24px rgba(20,30,110,.5);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0F26;--sf:#151B42;--ink:#F4F6FF;--mu:#BCC3EE;--ln:#2C3470;--sh:0 18px 44px -24px #000;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B0F26;--sf:#151B42;--ink:#F4F6FF;--mu:#BCC3EE;--ln:#2C3470;--sh:0 18px 44px -24px #000;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{background:var(--bg);color:var(--ink);font:500 19px/1.7 'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Lexend,system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em;font-weight:800}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.w{max-width:980px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:4px solid var(--ye);outline-offset:3px;border-radius:10px}
+.bar{position:sticky;top:0;z-index:30;background:var(--sf);border-bottom:2px solid var(--ln);padding-top:env(safe-area-inset-top,0px)}
+.bar .w{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font:800 20px Lexend;display:flex;gap:10px;align-items:center}.logo i{background:#2340D8;color:#fff;border-radius:12px;width:38px;height:38px;display:grid;place-items:center;font-style:normal;font-size:20px}
+.pg{font-size:16px;font-weight:700;color:var(--mu)}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;background:var(--c,#2340D8);color:#fff;border:0;border-radius:16px;padding:14px 26px;font:700 18px Lexend,sans-serif;box-shadow:inset 0 -4px 0 rgba(0,0,0,.22);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.gh{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 3px var(--ln)}
+.hero{padding:56px 0 40px}.hero h1{font-size:clamp(38px,7vw,70px);margin-bottom:16px}.hero h1 span{background:var(--ye);color:#0A0F29;padding:0 14px;border-radius:14px;display:inline-block;transform:rotate(-1.2deg)}
+.hero p{font-size:22px;color:var(--mu);max-width:30em}
+.demo{margin-top:26px;background:var(--sf);border:3px solid var(--ln);border-radius:26px;padding:22px 26px;max-width:640px;box-shadow:var(--sh)}
+.demo div{font:700 22px Lexend}.demo small{display:block;font:600 14px Lexend;color:var(--mu);text-transform:uppercase;letter-spacing:.08em;margin-top:8px}.demo .r{color:#2340D8}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .demo .r{color:#9FB2FF}}
+.grp{margin:44px 0 16px;font-size:28px;display:flex;gap:12px;align-items:center}.grp i{font-style:normal;background:var(--c);color:#fff;border-radius:12px;width:44px;height:44px;display:grid;place-items:center;font-size:22px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.tile{background:var(--sf);border:3px solid var(--ln);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:8px;position:relative;transition:transform .15s,border-color .15s,box-shadow .15s}
+.tile:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:var(--sh)}
+.tile b{font:800 24px Lexend}.tile span{color:var(--mu);font-size:17px}.tile code{font:600 16px Lexend;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c);padding:6px 12px;border-radius:10px;width:fit-content}
+.tile.ok:after{content:attr(data-s);position:absolute;top:16px;right:16px;background:var(--c);color:#fff;font:700 14px Lexend;padding:3px 12px;border-radius:99px}
+.tb{width:100%;border-collapse:separate;border-spacing:0;background:var(--sf);border:3px solid var(--ln);border-radius:22px;overflow:hidden;font-size:17px}
+.tbw{overflow-x:auto;border-radius:22px}.tb th,.tb td{padding:14px 18px;text-align:left;border-bottom:2px solid var(--ln)}.tb th{background:#2340D8;color:#fff;font-family:Lexend}.tb tr:last-child td{border-bottom:0}
+.crumb{display:flex;justify-content:space-between;gap:10px;padding:22px 0 10px;font-weight:700;color:var(--mu);font-size:17px}
+.lh{background:var(--c);color:#fff;border-radius:34px;padding:36px;box-shadow:var(--sh)}
+.lh small{font:700 16px Lexend;opacity:.95;text-transform:uppercase;letter-spacing:.08em}.lh h1{font-size:clamp(34px,6vw,56px);margin:8px 0 8px}.lh p{font-size:21px;opacity:.97}
+.sn{position:sticky;top:64px;z-index:20;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+.sn a{flex:none;background:var(--sf);border:3px solid var(--ln);border-radius:99px;padding:8px 18px;font:700 16px Lexend}
+.sn a:hover{border-color:var(--c);color:var(--c)}
+.sec{background:var(--sf);border:3px solid var(--ln);border-radius:30px;padding:32px;margin-top:20px}
+.sec>h2{font-size:30px;display:flex;gap:14px;align-items:center;margin-bottom:20px}.sec>h2 i{font-style:normal;background:var(--c);color:#fff;min-width:54px;height:54px;padding:0 10px;border-radius:16px;display:grid;place-items:center;font-size:22px}
+.def{font-size:22px;line-height:1.65}
+.card{background:var(--bg);border:2px solid var(--ln);border-left:8px solid var(--c);border-radius:18px;padding:18px 22px;margin-bottom:14px}
+.card .f{font:700 20px Lexend;color:var(--c);margin-bottom:6px}.card .f[data-k]:before{content:attr(data-k);display:inline-block;background:var(--c);color:#fff;border-radius:9px;padding:0 10px;margin-right:10px;font-size:17px}
+.en{font:700 22px Lexend;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.vi{color:var(--mu);font-size:18px;margin-top:2px}
+.say{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--c);color:#fff;font-size:18px}
+.lab{font-weight:700;color:var(--mu);font-size:17px;margin-bottom:4px}
+.ex{background:var(--bg);border:2px solid var(--ln);border-radius:22px;padding:22px;margin-bottom:14px}
+.ex h3{font-size:16px;color:var(--c);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}.q{font:700 22px/1.45 Lexend;margin-bottom:12px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.opt{border:3px solid var(--ln);background:var(--sf);border-radius:16px;padding:14px;font:600 19px 'Be Vietnam Pro'}.opt:hover{border-color:var(--c)}
+.opt.good{background:#0A7A3E;border-color:#0A7A3E;color:#fff}.opt.bad{background:#C0262D;border-color:#C0262D;color:#fff}
+.in{border:3px solid var(--ln);background:var(--sf);color:var(--ink);border-radius:12px;padding:8px 14px;font:600 20px 'Be Vietnam Pro';width:min(260px,100%);margin:0 6px}
+.in.full{width:100%;margin:0 0 12px}
+.ans,.bank{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;min-height:56px;padding:8px;border-radius:14px}.ans{border:3px dashed var(--ln)}
+.fb{margin-top:12px;font:700 19px Lexend;min-height:26px}.fb.g{color:#0A7A3E}.fb.b{color:#C0262D}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .fb.g{color:#5BE39A}:root:not([data-theme="light"]) .fb.b{color:#FF8A8F}}
+.res{margin-top:16px;background:var(--ink);color:var(--bg);border-radius:22px;padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font:700 22px Lexend}
+.nav2{display:flex;justify-content:space-between;gap:12px;margin:26px 0 60px}
+@media(max-width:700px){body{font-size:18px}.sec{padding:22px}.lh{padding:26px}.en{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="w"><a class="logo" href="#home"><i>⇄</i>Voice & Verbs</a><span class="pg" id="pg"></span></div></div>
+<div id="app"></div>
+
+<script>
+const RAW=`@Active Voice|Active Voice|Câu chủ động|Câu chủ động (active voice) là câu mà chủ ngữ là người hoặc vật trực tiếp thực hiện hành động. Cấu trúc cơ bản: S + V + O. Dạng câu này nhấn mạnh người làm và là cách nói tự nhiên, ngắn gọn nhất trong giao tiếp hằng ngày.
+U|The chef cooks dinner every day.|Đầu bếp nấu bữa tối mỗi ngày. (chủ ngữ "the chef" thực hiện hành động)
+U|Tom broke the window.|Tom đã làm vỡ cửa sổ.
+U|The students are writing essays.|Các học sinh đang viết bài luận.
+S|S + V + O|She reads a book.
+S|S + V (nội động từ, không có tân ngữ)|The sun rises.
+S|S + V + O1 + O2 (hai tân ngữ)|He gave her a gift.
+S|Chủ động ở các thì khác nhau|They have finished the project.
+N|Chỉ ngoại động từ (có tân ngữ) mới chuyển được sang bị động.|They arrived late. (câu này không có dạng bị động)
+N|Dùng chủ động khi người làm quan trọng hoặc đã rõ ràng.|My mother cooked this meal.
+N|Chủ động thường ngắn gọn và tự nhiên hơn bị động.|Tom broke the window. (tự nhiên hơn: The window was broken by Tom.)
+A|Nhấn mạnh người thực hiện hành động.|Maria painted this picture.
+A|Kể lại sự việc rõ ràng.|The police arrested the thief.
+A|Mô tả thói quen.|My father drinks coffee every morning.
+X|M|Which sentence is active?|The cake was eaten by Tom./Tom ate the cake./The cake is being eaten.|1
+X|M|In "She reads a book", the subject is ___.|a book/She/reads|1
+X|M|Which verb has no passive form?|build/arrive/write|1
+X|F|The chef ___ (cook) dinner every day.|cooks
+X|F|They ___ (finish) the project yesterday.|finished
+X|W|Chuyển sang câu chủ động: The window was broken by Tom.|Tom broke the window
+X|W|Chuyển sang câu chủ động: The letter was written by Anna.|Anna wrote the letter
+X|T|"The sun rises" can be changed into a passive sentence.|S
+X|T|"Tom broke the window" is an active sentence.|Đ
+X|O|The police arrested the thief
+@Present Passive|Present Passive|Bị động hiện tại đơn|Bị động hiện tại đơn dùng để nói về sự thật, thói quen hoặc hành động lặp lại, khi ta quan tâm đến đối tượng chịu tác động hơn là người thực hiện. Cấu trúc: S + am/is/are + V3/V-ed.
+U|English is spoken all over the world.|Tiếng Anh được nói trên khắp thế giới.
+U|The rooms are cleaned every day.|Các phòng được dọn mỗi ngày.
+U|Rice is grown in Vietnam.|Lúa gạo được trồng ở Việt Nam.
+S|Khẳng định: S + am/is/are + V3|The car is washed every week.
+S|Phủ định: S + am/is/are + not + V3|The shop is not opened on Sundays.
+S|Nghi vấn: Am/Is/Are + S + V3?|Is the report written by Lan?
+S|Thêm tác nhân: ... + by + O|The books are written by Mr. Hung.
+N|Quy tắc chuyển: tân ngữ → chủ ngữ, be theo chủ ngữ mới, động từ → V3, chủ ngữ cũ → by + O (có thể bỏ).|They make shoes here. → Shoes are made here.
+N|Bỏ "by + tác nhân" khi người làm không quan trọng hoặc không rõ.|Rice is grown in Vietnam. (không cần: by farmers)
+N|Chia be theo chủ ngữ mới (số ít hoặc số nhiều).|The window is cleaned. / The windows are cleaned.
+A|Mô tả quy trình, sản xuất.|Coffee is grown in Dak Lak.
+A|Thông báo quy định.|Smoking is not allowed here.
+A|Nói chung chung về một sự việc.|Many cars are sold every year.
+X|M|Rice ___ in Vietnam.|grows/is grown/are grown|1
+X|M|The rooms ___ every day.|is cleaned/are cleaned/cleaned|1
+X|M|Which is correct?|English is speak here./English is spoken here./English spoken is here.|1
+X|F|Coffee ___ (grow) in Dak Lak.|is grown
+X|F|These books ___ (write) by Mr. Hung.|are written
+X|W|Chuyển sang bị động: They make shoes here.|Shoes are made here/Shoes are made here by them
+X|W|Chuyển sang bị động: People speak English all over the world.|English is spoken all over the world/English is spoken all over the world by people
+X|T|Smoking is not allow here.|S
+X|T|The car is washed every week.|Đ
+X|O|Coffee is grown in the highlands
+@Past Passive|Past Passive|Bị động quá khứ đơn|Bị động quá khứ đơn dùng để nói về hành động đã xảy ra và kết thúc trong quá khứ, khi ta quan tâm đến đối tượng chịu tác động. Cấu trúc: S + was/were + V3/V-ed.
+U|The Eiffel Tower was built in 1889.|Tháp Eiffel được xây năm 1889.
+U|The windows were broken last night.|Các cửa sổ bị vỡ tối qua.
+U|I was invited to the party.|Tôi được mời đến bữa tiệc.
+S|Khẳng định: S + was/were + V3|The thief was caught.
+S|Phủ định: S + was/were + not + V3|The letter was not sent.
+S|Nghi vấn: Was/Were + S + V3?|Were the tickets bought?
+S|Thêm tác nhân: ... + by + O|Hamlet was written by Shakespeare.
+N|was dùng với I/he/she/it và danh từ số ít, were dùng với you/we/they và danh từ số nhiều.|The book was lost. / The books were lost.
+N|Phân biệt V2 và V3 ở động từ bất quy tắc.|The letter was written. (không nói: was wrote)
+N|Thêm "by" khi người làm là thông tin quan trọng.|The Mona Lisa was painted by Leonardo da Vinci.
+A|Kể sự kiện lịch sử.|The bridge was built in 1990.
+A|Tường thuật tai nạn, sự cố.|Two people were injured in the accident.
+A|Nói về điều xảy ra với bản thân.|I was told to wait outside.
+X|M|The Eiffel Tower ___ in 1889.|built/was built/were built|1
+X|M|The windows ___ broken last night.|was/were/are|1
+X|M|Which is correct?|The letter was wrote by Anna./The letter was written by Anna./The letter written by Anna was.|1
+X|F|Hamlet ___ (write) by Shakespeare.|was written
+X|F|Two people ___ (injure) in the accident.|were injured
+X|W|Chuyển sang bị động: Someone stole my bike.|My bike was stolen/My bike was stolen by someone
+X|W|Chuyển sang bị động (bắt đầu bằng "We"): The teacher gave us homework.|We were given homework/We were given homework by the teacher
+X|T|The tickets was bought yesterday.|S
+X|T|The bridge was built in 1990.|Đ
+X|O|The Mona Lisa was painted by Leonardo da Vinci
+@Perfect Passive|Perfect Passive|Bị động các thì hoàn thành|Bị động hoàn thành dùng để nói về hành động đã hoàn tất (và còn liên quan đến hiện tại hoặc một mốc thời gian) ở dạng bị động. Gồm: have/has been + V3 (hiện tại hoàn thành), had been + V3 (quá khứ hoàn thành), will have been + V3 (tương lai hoàn thành).
+U|The report has been finished.|Báo cáo đã được hoàn thành.
+U|The house had been sold before we arrived.|Ngôi nhà đã được bán trước khi chúng tôi đến.
+U|By next year, the bridge will have been completed.|Đến năm sau, cây cầu sẽ được hoàn thành.
+S|Hiện tại hoàn thành: S + have/has been + V3|The room has been cleaned.
+S|Quá khứ hoàn thành: S + had been + V3|The film had been shown before.
+S|Tương lai hoàn thành: S + will have been + V3|The work will have been done by Friday.
+S|Nghi vấn: Has/Have + S + been + V3?|Has the email been sent?
+N|"been" là bắt buộc, không được bỏ.|The bill has been paid. (không nói: The bill has paid.)
+N|has dùng với chủ ngữ số ít, have dùng với chủ ngữ số nhiều.|The window has been broken. / The windows have been broken.
+N|Thường đi với already, yet, just, since, for.|The tickets have already been sold.
+A|Thông báo kết quả.|The results have been announced.
+A|Nói về thứ tự các việc đã xảy ra.|The documents had been signed before the meeting.
+A|Dự đoán việc sẽ hoàn thành.|The building will have been finished by 2030.
+X|M|The report ___ finished.|has been/have been/has|0
+X|M|The tickets ___ already been sold.|has/have/is|1
+X|M|By Friday, the work ___ done.|will be/will have been/has been|1
+X|F|The results ___ (announce) already.|have been announced
+X|F|The house ___ (sell) before we arrived.|had been sold
+X|W|Chuyển sang bị động: They have finished the report.|The report has been finished/The report has been finished by them
+X|W|Chuyển sang bị động: Someone has cleaned the room.|The room has been cleaned/The room has been cleaned by someone
+X|T|The bill has be paid.|S
+X|T|The documents had been signed before the meeting.|Đ
+X|O|The results have been announced
+@Continuous Passive|Continuous Passive|Bị động các thì tiếp diễn|Bị động tiếp diễn dùng để nói về hành động đang diễn ra (ở hiện tại hoặc một thời điểm trong quá khứ) ở dạng bị động. Gồm: am/is/are + being + V3 (hiện tại tiếp diễn) và was/were + being + V3 (quá khứ tiếp diễn).
+U|The road is being repaired.|Con đường đang được sửa.
+U|The children are being taught by a new teacher.|Bọn trẻ đang được một giáo viên mới dạy.
+U|When I arrived, dinner was being cooked.|Khi tôi đến, bữa tối đang được nấu.
+S|Hiện tại tiếp diễn: S + am/is/are + being + V3|The house is being painted.
+S|Quá khứ tiếp diễn: S + was/were + being + V3|The cars were being washed.
+S|Phủ định: S + be + not + being + V3|The room is not being used.
+S|Nghi vấn: Is/Are/Was/Were + S + being + V3?|Is the bridge being built?
+N|"being" là bắt buộc trong bị động tiếp diễn.|The car is being repaired. (không nói: The car is repaired, khi việc sửa đang diễn ra)
+N|Với tương lai, thường dùng bị động đơn giản thay cho tiếp diễn.|Dinner will be served at 7.
+N|Động từ chỉ trạng thái (know, like...) không dùng ở dạng tiếp diễn.|The answer is known. (không nói: is being known)
+A|Nói về việc đang sửa chữa, xây dựng.|The hotel is being renovated.
+A|Mô tả bối cảnh trong quá khứ.|When I called, the meeting was being held.
+A|Giải thích tình trạng tạm thời.|Sorry, the printer is being fixed.
+X|M|The road ___ repaired now.|is/is being/has|1
+X|M|When I arrived, dinner ___ cooked.|was being/was/is being|0
+X|M|The hotel ___ renovated at the moment.|is/is being/was|1
+X|F|The house ___ (paint) at the moment.|is being painted
+X|F|The cars ___ (wash) when I arrived.|were being washed
+X|W|Chuyển sang bị động: They are repairing the road.|The road is being repaired/The road is being repaired by them
+X|W|Chuyển sang bị động: Workers were building a bridge.|A bridge was being built/A bridge was being built by workers
+X|T|The room is using now.|S
+X|T|The printer is being fixed.|Đ
+X|O|The hotel is being renovated at the moment
+@Modal Passive|Modal Passive|Bị động với động từ khiếm khuyết|Bị động với modal verb (can, must, should, may, might, could, will...) dùng để nói về khả năng, sự bắt buộc, lời khuyên... ở dạng bị động. Cấu trúc: modal + be + V3 (hiện tại/tương lai) và modal + have been + V3 (quá khứ).
+U|The homework must be finished today.|Bài tập phải được hoàn thành hôm nay.
+U|Your phone can be repaired here.|Điện thoại của bạn có thể được sửa ở đây.
+U|The accident could have been avoided.|Vụ tai nạn lẽ ra đã có thể tránh được.
+S|Modal + be + V3|The door should be closed.
+S|Modal + not + be + V3|The window cannot be opened.
+S|Modal + have been + V3 (quá khứ)|The letter should have been sent yesterday.
+S|have to / be going to / need to + be + V3|The report has to be finished today.
+N|Sau modal luôn dùng "be", không chia.|The work must be done. (không nói: must is done)
+N|Modal + have been + V3 nói về việc lẽ ra nên hoặc có thể đã xảy ra trong quá khứ.|The problem could have been solved earlier.
+N|Modal giữ nguyên nghĩa của nó: must (bắt buộc), should (nên), can (có thể).|The form must be signed. (bắt buộc phải ký)
+A|Nêu nội quy, quy định.|Shoes must be removed at the door.
+A|Đưa ra lời khuyên, đề xuất.|The rules should be explained clearly.
+A|Phê bình việc đã xảy ra.|The meeting should have been cancelled.
+X|M|The homework must ___ today.|finish/be finished/is finished|1
+X|M|The accident could ___ avoided.|have been/be/has been|0
+X|M|Which is correct?|The door should closed./The door should be closed./The door should is closed.|1
+X|F|Shoes must ___ (remove) at the door.|be removed
+X|F|The letter should ___ (send) yesterday.|have been sent
+X|W|Chuyển sang bị động: You must finish the homework today.|The homework must be finished today/The homework must be finished today by you
+X|W|Chuyển sang bị động: They should have cancelled the meeting.|The meeting should have been cancelled/The meeting should have been cancelled by them
+X|T|The work must is done.|S
+X|T|Your phone can be repaired here.|Đ
+X|O|The form must be signed by everyone
+@Have something done|Have something done|Nhờ ai làm gì cho mình|Have something done là thể sai khiến (causative): cấu trúc have + tân ngữ + V3 dùng khi ta nhờ hoặc thuê người khác làm việc gì cho mình. Cấu trúc này cũng dùng để nói về việc không may xảy ra với mình.
+U|I had my car repaired yesterday.|Hôm qua tôi đã nhờ người sửa xe.
+U|She has her hair cut every month.|Cô ấy đi cắt tóc mỗi tháng.
+U|He had his wallet stolen.|Anh ấy bị trộm mất ví.
+S|S + have/has/had + O + V3|We had the house painted.
+S|S + will have + O + V3 (tương lai)|I will have my laptop fixed.
+S|S + be having + O + V3 (tiếp diễn)|She is having her nails done.
+S|have + sb + V (nêu người làm, không có to)|I had the mechanic check my car.
+N|"have" chia theo thì, V3 giữ nguyên.|He has his shoes cleaned. / He had his shoes cleaned.
+N|Không nhầm với tự làm: nhờ người khác dùng have + O + V3.|I repaired my car. (tôi tự sửa) / I had my car repaired. (tôi nhờ người sửa)
+N|Cấu trúc này cũng chỉ việc không may.|She had her bag stolen.
+A|Nhờ dịch vụ.|I'm going to have my hair cut tomorrow.
+A|Kể việc đã thuê người làm.|We had our house painted last month.
+A|Nói về sự cố.|He had his phone stolen on the bus.
+X|M|I ___ my car repaired yesterday.|had/did/was|0
+X|M|She has her hair ___ every month.|cut/cutting/to cut|0
+X|M|I ___ the mechanic check my car.|had/got/wanted|0
+X|F|We ___ (have) our house painted last month.|had
+X|F|He had his wallet ___ (steal) on the bus.|stolen
+X|W|Viết lại với "have something done": Someone cut my hair yesterday. (I ...)|I had my hair cut yesterday
+X|W|Viết lại với "have something done": A mechanic repaired her car. (She ...)|She had her car repaired
+X|T|"I had my car repaired" means I repaired it myself.|S
+X|T|She is having her nails done.|Đ
+X|O|I had my laptop fixed yesterday
+@Get something done|Get something done|Nhờ làm gì (thân mật)|Get something done cũng là thể sai khiến, có nghĩa gần giống have something done nhưng thân mật hơn, thường dùng trong văn nói. Get còn được dùng để nói việc hoàn thành xong một việc, hoặc việc không may xảy ra với mình.
+U|I need to get my phone fixed.|Tôi cần nhờ người sửa điện thoại.
+U|She got her hair dyed.|Cô ấy đã đi nhuộm tóc.
+U|We got the room cleaned before the guests arrived.|Chúng tôi đã cho dọn phòng trước khi khách đến.
+S|S + get/gets/got + O + V3|I got my car washed.
+S|S + get + sb + to V|I got my brother to fix my bike.
+S|S + get + O + V3 (hoàn thành việc)|I must get this report finished.
+S|S + get + O + V3 (việc không may)|He got his fingers caught in the door.
+N|"get" thân mật hơn "have", thường dùng khi nói chuyện.|I got my hair cut. (thân mật) / I had my hair cut. (trung tính)
+N|get + sb + to V có "to", còn have + sb + V thì không.|I got him to help me. / I had him help me.
+N|Trong văn trang trọng nên dùng have thay vì get.|I had the report checked by the manager.
+A|Nhờ dịch vụ trong giao tiếp thân mật.|I'm getting my bike repaired.
+A|Nói về việc hoàn thành công việc.|Let's get the work done first.
+A|Nói về điều không may.|She got her bag stolen.
+X|M|I need to get my phone ___.|fix/fixed/fixing|1
+X|M|I got my brother ___ my bike.|fix/to fix/fixed|1
+X|M|Which sentence is more informal?|I had my hair cut./I got my hair cut./Both are the same|1
+X|F|I got my car ___ (wash) yesterday.|washed
+X|F|She got her brother ___ (help) her.|to help
+X|W|Viết lại với "get something done": Someone repaired my phone. (I ...)|I got my phone repaired
+X|W|Viết lại với "get something done": A hairdresser dyed her hair. (She ...)|She got her hair dyed
+X|T|I got him fix my computer.|S
+X|T|We got the room cleaned before the guests came.|Đ
+X|O|I got my bike repaired yesterday`;
+const GR=[['1. Active Voice','#2340D8','✍️',[0]],['2. Passive Voice','#B0206A','🔁',[1,2,3,4,5]],['3. Causative Form','#0A7A5C','🛠️',[6,7]]];
+const SEC=['Định nghĩa','Cách dùng','Cấu trúc','Lưu ý','Cách áp dụng','Bài tập'],RM=['I','II','III','IV','V','VI'];
+const D=RAW.trim().split('\n@').map((b,k)=>{const L=b.replace(/^@/,'').split('\n'),h=L[0].split('|'),t={id:'t'+(k+1),n:h[0],tt:h[1],sub:h[2],def:h[3],U:[],S:[],N:[],A:[],X:[]};
+ L.slice(1).forEach(l=>{const p=l.split('|');t[p[0]].push(p.slice(1))});t.col=GR.find(g=>g[3].includes(k))[1];return t});
+let done={};try{done=JSON.parse(localStorage.getItem('vv-done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('vv-done',JSON.stringify(done))}catch(e){}};
+const $=id=>document.getElementById(id),SH=a=>[...a].sort(()=>Math.random()-.5);
+const speak=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.split('→').pop().replace(/\(.*?\)/g,'').replace(/"/g,''));u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u)}catch(e){}};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b){e.preventDefault();speak(b.dataset.say)}});
+const norm=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/[.!?,"]/g,'').replace(/\s+/g,' ').trim();
+const upd=()=>{$('pg').textContent=`Đã hoàn thành ${Object.keys(done).length}/${D.length} chủ đề`};
+
+function renderHome(){
+  const tile=t=>`<a class="tile${done[t.id]!=null?' ok':''}" data-s="${done[t.id]}/10" href="#${t.id}" style="--c:${t.col}"><code>${t.sub}</code><b>${t.tt}</b><span>6 phần · 10 bài tập</span></a>`;
+  const rows=D.map(t=>`<tr><td><b>${t.n}</b></td><td>${t.S[0][0]}</td><td>${t.S[0][1]}</td></tr>`).join('');
+  $('app').innerHTML=`<main class="w"><header class="hero"><h1>Câu <span>bị động</span> và thể sai khiến</h1><p>Chuyển đổi giữa chủ động và bị động, dùng bị động ở nhiều thì, và nhờ người khác làm việc cho mình với have và get. Mỗi chủ đề có 6 phần và 10 bài tập.</p>
+  <div class="demo"><small>Chủ động</small><div>Tom broke the window.</div><small>Bị động</small><div class="r">The window was broken by Tom.</div></div></header>
+  ${GR.map(g=>`<h2 class="grp" style="--c:${g[1]}"><i>${g[2]}</i>${g[0]}</h2><div class="tiles">${g[3].map(i=>tile(D[i])).join('')}</div>`).join('')}
+  <h2 class="grp" style="--c:#2340D8"><i>📋</i>Bảng tóm tắt nhanh</h2><div class="tbw"><table class="tb"><tr><th>Chủ đề</th><th>Cấu trúc</th><th>Ví dụ</th></tr>${rows}</table></div><div style="height:60px"></div></main>`}
+
+const ff=(el,ok,m)=>{const f=el.querySelector('.fb');f.className='fb '+(ok?'g':'b');f.textContent=ok?'Chính xác! 🎉':'Chưa đúng. '+m};
+const R={
+ M(x,el,fin){const O=x[2].split('/'),a=+x[3];el.innerHTML=`<p class="q">${x[1]}</p><div class="opts">${O.map((v,i)=>`<button class="opt" data-i="${i}">${v}</button>`).join('')}</div><div class="fb"></div>`;
+  const B=el.querySelectorAll('.opt');B.forEach(b=>b.onclick=()=>{if(el.dataset.d)return;el.dataset.d=1;const ok=+b.dataset.i===a;b.classList.add(ok?'good':'bad');if(!ok)B[a].classList.add('good');ff(el,ok,'Đáp án đúng: '+O[a]);fin(ok)})},
+ T(x,el,fin){const ans=x[2]==='Đ';el.innerHTML=`<p class="q">${x[1]}</p><div class="opts"><button class="opt" data-v="1">✔ Đúng</button><button class="opt" data-v="0">✘ Sai</button></div><div class="fb"></div>`;
+  el.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(el.dataset.d)return;el.dataset.d=1;const ok=(b.dataset.v==='1')===ans;b.classList.add(ok?'good':'bad');ff(el,ok,'Câu này '+(ans?'đúng':'sai')+'.');fin(ok)})},
+ F(x,el,fin){const[a,b]=x[1].split('___');el.innerHTML=`<p class="q">${a}<input class="in" aria-label="Điền đáp án" autocomplete="off">${b}</p><button class="btn" style="padding:10px 22px;font-size:16px">Kiểm tra</button><div class="fb"></div>`;
+  el.querySelector('button').onclick=()=>{if(el.dataset.d)return;const v=norm(el.querySelector('.in').value);if(!v)return;el.dataset.d=1;const ok=x[2].split('/').some(s=>norm(s)===v);ff(el,ok,'Đáp án: '+x[2].split('/')[0]);fin(ok)}},
+ W(x,el,fin){el.innerHTML=`<p class="q">Viết lại câu theo yêu cầu:</p><p class="q" style="color:var(--c)">${x[1]}</p><input class="in full" aria-label="Câu của bạn" autocomplete="off" placeholder="Gõ câu của bạn..."><button class="btn" style="padding:10px 22px;font-size:16px">Kiểm tra</button><div class="fb"></div>`;
+  el.querySelector('button').onclick=()=>{if(el.dataset.d)return;const v=norm(el.querySelector('.in').value);if(!v)return;el.dataset.d=1;const ok=x[2].split('/').some(s=>norm(s)===v);ff(el,ok,'Đáp án: '+x[2].split('/')[0]+'.');fin(ok)}},
+ O(x,el,fin){const s=x[1],w=s.split(' ');el.innerHTML=`<p class="q">Sắp xếp các từ thành câu đúng</p><div class="ans"></div><div class="bank">${SH(w.map((v,i)=>i)).map(i=>`<button class="opt">${w[i]}</button>`).join('')}</div><button class="btn" style="padding:10px 22px;font-size:16px;margin-top:10px">Kiểm tra</button><div class="fb"></div>`;
+  const A=el.querySelector('.ans'),B=el.querySelector('.bank');el.querySelectorAll('.bank .opt').forEach(b=>b.onclick=()=>{if(!el.dataset.d)(b.parentNode===B?A:B).appendChild(b)});
+  el.querySelector('.btn').onclick=()=>{if(el.dataset.d||!A.children.length)return;el.dataset.d=1;const ok=[...A.children].map(c=>c.textContent).join(' ')===s;ff(el,ok,'Đáp án: '+s);fin(ok)}}};
+
+function renderLesson(k){
+  const t=D[k],ex=(e,v)=>`<div class="en"><span>${e}</span><button class="say" data-say="${e.replace(/"/g,'')}" aria-label="Nghe">🔊</button></div>${v?`<div class="vi">${v}</div>`:''}`;
+  const sec=(i,b)=>`<section class="sec" id="p${i}"><h2><i>${RM[i]}</i>${SEC[i]}</h2>${b}</section>`;
+  $('app').innerHTML=`<main class="w" style="--c:${t.col}"><div class="crumb"><a href="#home">← Tất cả chủ đề</a><span>${k+1} / ${D.length}</span></div>
+  <header class="lh"><small>Voice &amp; verb transformation</small><h1>${t.tt}</h1><p>${t.sub}</p></header>
+  <nav class="sn">${SEC.map((s,i)=>`<a href="#p${i}">${RM[i]}. ${s}</a>`).join('')}</nav>
+  ${sec(0,`<p class="def">${t.def}</p>`)}
+  ${sec(1,t.U.map((u,i)=>`<div class="card"><div class="lab">Ví dụ ${i+1}</div>${ex(u[0],u[1])}</div>`).join(''))}
+  ${sec(2,t.S.map((s,i)=>`<div class="card"><div class="f" data-k="${i+1}">${s[0]}</div>${ex(s[1])}</div>`).join(''))}
+  ${sec(3,t.N.map(n=>`<div class="card"><div class="f" data-k="!" style="color:var(--ink);font-size:19px">${n[0]}</div>${ex(n[1])}</div>`).join(''))}
+  ${sec(4,t.A.map((a,i)=>`<div class="card"><div class="lab">Tình huống ${i+1}: ${a[0]}</div>${ex(a[1])}</div>`).join(''))}
+  ${sec(5,`<div id="exl"></div><div class="res"><span id="sc"></span><button class="btn" id="rs" style="background:var(--bg);color:var(--ink)">Làm lại</button></div>`)}
+  <div class="nav2">${k?`<a class="btn gh" href="#${D[k-1].id}">← ${D[k-1].n}</a>`:'<span></span>'}${k<D.length-1?`<a class="btn" href="#${D[k+1].id}">${D[k+1].n} →</a>`:'<span></span>'}</div></main>`;
+  const run=()=>{$('exl').innerHTML='';let sc=0,an=0;const N=t.X.length;$('sc').textContent=`Điểm: 0 / ${N}`;
+   t.X.forEach((x,i)=>{const el=document.createElement('div');el.className='ex';el.innerHTML=`<h3>Câu ${i+1} · ${{M:'Trắc nghiệm',F:'Điền từ',W:'Viết lại câu',T:'Đúng / Sai',O:'Sắp xếp câu'}[x[0]]}</h3>`;const box=document.createElement('div');el.appendChild(box);$('exl').appendChild(el);
+    R[x[0]](x,box,ok=>{an++;if(ok)sc++;$('sc').textContent=`Điểm: ${sc} / ${N}`+(an===N?' · Hoàn thành! 🎉':'');if(an===N){done[t.id]=sc;save();upd()}})})};
+  $('rs').onclick=run;run()}
+
+function route(){const h=location.hash.slice(1);if(/^p\d$/.test(h))return;const k=D.findIndex(t=>t.id===h);k<0?renderHome():renderLesson(k);upd();scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
